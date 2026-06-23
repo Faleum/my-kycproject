@@ -1,0 +1,391 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body,
+#root{
+    width:100%;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.signup-container{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        -45deg,
+        #1565c0,
+        #00c853,
+        #0d47a1,
+        #00e676
+    );
+
+    background-size:400% 400%;
+    animation:gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* =========================
+   FLOATING CIRCLES
+========================= */
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    animation:float 8s ease-in-out infinite;
+}
+
+.circle1{
+    width:400px;
+    height:400px;
+    top:-120px;
+    left:-120px;
+}
+
+.circle2{
+    width:300px;
+    height:300px;
+    bottom:-80px;
+    right:-60px;
+}
+
+.circle3{
+    width:180px;
+    height:180px;
+    top:12%;
+    right:10%;
+}
+
+.circle4{
+    width:150px;
+    height:150px;
+    bottom:15%;
+    left:12%;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-35px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   CARD
+========================= */
+
+.signup-card{
+    width:100%;
+    max-width:700px;
+
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    padding:35px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,0.25);
+
+    z-index:10;
+
+    animation:cardAppear 1s ease;
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   LOGO SECTION
+========================= */
+
+.logo-section{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo-section h1{
+    font-size:3rem;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.blue{
+    color:#1565c0;
+}
+
+.green{
+    color:#00c853;
+}
+
+.logo-section p{
+    color:#666;
+    font-size:1.1rem;
+}
+
+.welcome-text{
+    margin-top:10px;
+    color:#888;
+    font-size:15px;
+    font-weight:500;
+}
+
+/* =========================
+   FORM HEADER
+========================= */
+
+.form-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.form-header h2{
+    font-size:2rem;
+    color:#222;
+    margin-bottom:10px;
+}
+
+.form-header p{
+    color:#666;
+    font-size:15px;
+}
+
+/* =========================
+   FORM GROUPS
+========================= */
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+
+    font-weight:600;
+    color:#333;
+
+    text-align:left;
+}
+
+/* =========================
+   INPUT BOX
+========================= */
+
+.input-box{
+    display:flex;
+    align-items:center;
+
+    background:#fff;
+
+    border:1px solid #ddd;
+    border-radius:15px;
+
+    overflow:hidden;
+
+    transition:all .3s ease;
+}
+
+.input-box:hover{
+    transform:translateY(-2px);
+}
+
+.input-box:focus-within{
+    border-color:#1565c0;
+    box-shadow:0 0 20px rgba(21,101,192,0.15);
+}
+
+.icon{
+    width:60px;
+    text-align:center;
+    color:#00c853;
+    font-size:18px;
+}
+
+/* =========================
+   INPUTS & SELECT
+========================= */
+
+.input-box input,
+.input-box select{
+    flex:1;
+
+    border:none;
+    outline:none;
+
+    padding:16px;
+
+    font-size:15px;
+
+    background:transparent;
+}
+
+/* =========================
+   ERRORS
+========================= */
+
+.error{
+    color:#ff3b30;
+    font-size:13px;
+    margin-top:6px;
+    display:block;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.submit-btn{
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+    border-radius:15px;
+
+    background:linear-gradient(
+        90deg,
+        #00c853,
+        #1565c0
+    );
+
+    background-size:200% auto;
+
+    color:white;
+
+    font-size:18px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    transition:.4s;
+}
+
+.submit-btn:hover{
+    background-position:right center;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(21,101,192,0.35);
+}
+
+/* =========================
+   LOGIN LINK
+========================= */
+
+.login-link{
+    text-align:center;
+    margin-top:25px;
+    color:#555;
+}
+
+.login-link a{
+    color:#1565c0;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.login-link a:hover{
+    text-decoration:underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .signup-card{
+        padding:25px;
+        border-radius:20px;
+    }
+
+    .logo-section h1{
+        font-size:2.2rem;
+    }
+
+    .form-header h2{
+        font-size:1.6rem;
+    }
+
+    .circle1{
+        width:250px;
+        height:250px;
+    }
+
+    .circle2{
+        width:200px;
+        height:200px;
+    }
+
+    .circle3{
+        width:120px;
+        height:120px;
+    }
+
+    .circle4{
+        width:100px;
+        height:100px;
+    }
+}
